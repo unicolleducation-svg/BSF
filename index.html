@@ -1,31 +1,295 @@
-<section id="committee">
-  <div class="container">
-    <h2 class="section-title colorful">Executive Committee 2025–2026</h2>
-    <div class="team">
-      <div class="person">
-        <img class="avatar" src="/sabuj.jpg" alt="Saiful Alam Sabuj – President">
-        <h4>Saiful Alam Sabuj</h4>
-        <div class="role">President</div>
-        <div class="muted">Sciences Po Paris</div>
-      </div>
-      <div class="person">
-        <img class="avatar" src="/Md Tofazzal Hossain Rasel.jpg" alt="Md Tofazzal Hossain Rasel – General Secretary">
-        <h4>Md Tofazzal Hossain Rasel</h4>
-        <div class="role">General Secretary</div>
-        <div class="muted">ESILV</div>
-      </div>
-      <div class="person">
-        <img class="avatar" src="/Syed Tashfin.jpg" alt="Syed Tashfin – Treasurer">
-        <h4>Syed Tashfin</h4>
-        <div class="role">Treasurer</div>
-        <div class="muted">ESILV</div>
-      </div>
-      <div class="person">
-        <img class="avatar" src="/Dhalia Nishat.jpg" alt="Dhalia Nishat – General Coordinator">
-        <h4>Dhalia Nishat</h4>
-        <div class="role">General Coordinator</div>
-        <div class="muted">Sorbonne Université</div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bangladeshi Students Forum – France (BSF France)</title>
+  <meta name="description" content="Bangladeshi Students Forum, France – community, events, support and networking for Bangladeshi students across France." />
+
+  <style>
+    :root{
+      --navy:#0b2a4a;
+      --navy-2:#0f3a66;
+      --gold:#d4af37;
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --border:#e5e7eb;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:var(--bg);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;height:auto}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--navy),var(--navy-2));color:#fff;border-bottom:3px solid var(--gold)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;color:#fff}
+    .brand img.logo{height:58px;width:auto;border-radius:50%}
+    .brand .name{font-weight:800;letter-spacing:.3px}
+    nav.primary{display:flex;gap:18px;align-items:center}
+    nav.primary a{color:#fff;font-weight:700;opacity:.95}
+    nav.primary a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--gold);color:#1a1a1a;font-weight:800;border:1px solid rgba(0,0,0,.06)}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Hero */
+    .hero{padding:56px 0 36px;background:radial-gradient(1200px 600px at 10% -10%,rgba(212,175,55,.15),transparent 60%),radial-gradient(1400px 720px at 110% 0%,rgba(15,58,102,.1),transparent 60%)}
+    .grid-hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .eyebrow{font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+    h1{font-size:clamp(28px,3.6vw,46px);line-height:1.1;margin:10px 0 8px;color:var(--navy)}
+    .lead{color:var(--muted);font-size:18px;margin:0 0 14px}
+    .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 10px 28px rgba(2,6,23,.06)}
+
+    /* Sections */
+    section{padding:32px 0}
+    .title{font-size:clamp(22px,2.4vw,32px);margin:0 0 6px;color:var(--navy)}
+    .title .accent{color:var(--gold)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(2,6,23,.05)}
+    .muted{color:var(--muted)}
+
+    /* Social icons */
+    .social{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .circle{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid #ddd}
+    .fb{background:#1877f2;border:none}
+    .li{background:#0a66c2;border:none}
+    .circle svg{display:block}
+
+    /* Press logos */
+    .press-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;grid-auto-rows:70px}
+    .press-logos .logo-box{background:#fff;border:1px dashed var(--border);border-radius:12px;display:grid;place-items:center;height:70px;padding:10px}
+    .press-logos .logo-box img{max-height:40px;width:auto;object-fit:contain;filter:contrast(110%)}
+
+    /* Exec committee */
+    .team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .person{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
+    .avatar{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:6px auto 10px;display:block}
+    .person h4{margin:6px 0 2px}
+    .role{color:var(--navy);font-weight:700}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .gallery img{border-radius:12px;border:1px solid var(--border);cursor:pointer}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:70}
+    .lightbox img{max-width:92%;max-height:92%;border-radius:10px}
+
+    /* Footer */
+    footer{border-top:3px solid var(--gold);background:linear-gradient(180deg,var(--navy),#061b31);color:#fff;padding:26px 0;margin-top:36px}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+    .small{font-size:14px}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .grid-hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .press-logos{grid-template-columns:repeat(4,1fr)}
+      .team{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:640px){
+      nav.primary{display:none}
+      .brand img.logo{height:48px}
+      .cards{grid-template-columns:1fr}
+      .press-logos{grid-template-columns:repeat(3,1fr)}
+      .team{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="BSF France home">
+        <img src="/BSF_Logo.png" class="logo" alt="BSF France Logo">
+        <span class="name">Bangladeshi Students Forum – France</span>
+      </a>
+      <nav class="primary" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#social">Connect</a>
+        <a href="#news">News</a>
+        <a href="#press">In the Media</a>
+        <a href="#committee">Executive 2025–2026</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="grid-hero">
+        <div>
+          <div class="eyebrow">Community • Support • Opportunity</div>
+          <h1><span class="accent" style="color:var(--gold)">BSF France</span> — by and for Bangladeshi students across France</h1>
+          <p class="lead">We unite Bangladeshi students nationwide through mentorship, cultural activities, academic support and career networking. Join us at events in Paris, Toulouse, Lyon, Lille, and beyond.</p>
+          <a class="btn" href="#about">Learn more</a>
+        </div>
+        <div class="panel">
+          <h2 class="title">Stay in touch</h2>
+          <p class="muted">Follow our pages and drop us an email. We post events, scholarship info and student life updates.</p>
+          <div class="social" id="social">
+            <!-- Google -->
+            <a href="https://www.google.com/search?q=Bangladeshi+Students+Forum+France" target="_blank" rel="noopener" aria-label="Find us on Google">
+              <span class="circle">
+                <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+                  <path fill="#EA4335" d="M24 9.5c3.9 0 6.5 1.7 8 3.2l5.4-5.3C34.6 3.3 29.8 1 24 1 14.7 1 6.6 6.9 3.2 15.1l6.6 5.1C11.6 12.8 17.2 9.5 24 9.5z"/>
+                  <path fill="#34A853" d="M46.1 24.5c0-1.7-.1-3.4-.4-5H24v9.5h12.4c-.6 3.1-2.6 5.7-5.4 7.5l8.3 6.5C43.5 38.4 46.1 32 46.1 24.5z"/>
+                  <path fill="#FBBC05" d="M9.8 28.6c-1-3-1-6.2 0-9.2L3.2 14.2C1.1 18.5 0 23.1 0 28c0 4.9 1.1 9.5 3.2 13.8l6.6-5.2z"/>
+                  <path fill="#4285F4" d="M24 47c6.5 0 12-2.2 16-6l-8.3-6.5c-2.3 1.6-5.3 2.5-7.7 2.5-6.8 0-12.4-3.3-14.2-8.5l-6.6 5.2C6.6 41.1 14.7 47 24 47z"/>
+                </svg>
+              </span>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook">
+              <span class="circle fb">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#fff" d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 5.01 3.66 9.17 8.44 9.96v-7.04H7.9V12.1h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88c1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.61.76-1.61 1.54v1.88h2.74l-.44 2.89h-2.3v7.04C18.34 21.24 22 17.08 22 12.07Z"/>
+                </svg>
+              </span>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/yourcompany" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <span class="circle li">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#fff" d="M19 3A2.94 2.94 0 0 1 22 6v12a2.94 2.94 0 0 1-3 3H5a2.94 2.94 0 0 1-3-3V6a2.94 2.94 0 0 1 3-3h14M8.34 18.34V9.75H5.67v8.59h2.67M7 8.5a1.55 1.55 0 1 0 0-3.1a1.55 1.55 0 0 0 0 3.1m12 9.84v-4.63c0-2.48-1.33-3.63-3.12-3.63a2.7 2.7 0 0 0-2.44 1.34h-.05V9.75h-2.67v8.59h2.67v-4.77c0-1.26.23-2.47 1.79-2.47s1.61 1.39 1.61 2.55v4.69H19Z"/>
+                </svg>
+              </span>
+            </a>
+            <!-- Email -->
+            <a href="mailto:contact@bsf-france.org" aria-label="Email">
+              <span class="circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0b2a4a" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="title">Who we are <span class="accent">— Introduction</span></h2>
+      <div class="panel">
+        <p class="muted">Bangladeshi Students Forum, France (BSF France) is a non-profit, non-political community connecting Bangladeshi students across French cities and universities. We run welcome programs for new arrivals, mentorship and academic support, cultural celebrations, scholarship and visa guidance, and career networking with alumni in French industry and research.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- News & Updates -->
+  <section id="news">
+    <div class="container">
+      <h2 class="title">News & Updates</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Rassemblement à Paris en soutien aux étudiants du Bangladesh : «Je ne veux pas de meurtriers dans le gouvernement de mon pays»</h3>
+          <p class="muted">Libération</p>
+          <p><a class="btn" href="https://www.liberation.fr/international/asie-pacifique/rassemblement-a-paris-en-soutien-aux-etudiants-du-bangladesh-je-ne-veux-pas-de-meurtriers-dans-le-gouvernement-de-mon-pays-20240724_JDBMNHIEI5ELDGLTLS4E5CQNSQ/" target="_blank" rel="noopener">Read Article</a></p>
+        </article>
+        <article class="card">
+          <h3>New executive committee announced by Bangladesh Students' Forum, France for 2025–26</h3>
+          <p class="muted">Deshkal News</p>
+          <p><a class="btn" href="https://www.deshkalnews.com/english/details/education/5259" target="_blank" rel="noopener">Read Article</a></p>
+        </article>
+        <article class="card">
+          <h3>ফ্রান্সে বাংলাদেশি স্টুডেন্টস ফোরামের নতুন কার্যনির্বাহী কমিটি ঘোষণা</h3>
+          <p class="muted">Hemantokal</p>
+          <p><a class="btn" href="https://www.hemantokal.com/9069/" target="_blank" rel="noopener">Read Article</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appeared In — Media -->
+  <section id="press">
+    <div class="container">
+      <h2 class="title">Appeared In <span class="accent">— Media</span></h2>
+      <div class="press-logos">
+        <div class="logo-box"><img src="/liberation.svg" alt="Libération" /></div>
+        <div class="logo-box"><img src="/Logo_Ouest-France.svg.png" alt="Ouest-France" /></div>
+        <div class="logo-box"><img src="/cropped-sans-titre-1-1.png" alt="Combat Le Média" /></div>
+        <div class="logo-box"><img src="/prothom.png" alt="Prothom Alo" /></div>
+        <div class="logo-box"><img src="/somoy.png" alt="Somoy News" /></div>
+        <div class="logo-box"><img src="/Ekhon.png" alt="Ekhon TV" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Committee 2025–2026 -->
+  <section id="committee">
+    <div class="container">
+      <h2 class="title">Executive Committee <span class="accent">2025–2026</span></h2>
+      <div class="team">
+        <div class="person">
+          <img class="avatar" src="/sabuj.jpg" alt="Saiful Alam Sabuj – President">
+          <h4>Saiful Alam Sabuj</h4>
+          <div class="role">President</div>
+          <div class="muted">Sciences Po Paris</div>
+        </div>
+        <div class="person">
+          <img class="avatar" src="/Md%20Tofazzal%20Hossain%20Rasel.jpg" alt="Md Tofazzal Hossain Rasel – General Secretary">
+          <h4>Md Tofazzal Hossain Rasel</h4>
+          <div class="role">General Secretary</div>
+          <div class="muted">ESILV</div>
+        </div>
+        <div class="person">
+          <img class="avatar" src="/Syed%20Tashfin.jpg" alt="Syed Tashfin – Treasurer">
+          <h4>Syed Tashfin</h4>
+          <div class="role">Treasurer</div>
+          <div class="muted">ESILV</div>
+        </div>
+        <div class="person">
+          <img class="avatar" src="/Dhalia%20Nishat.jpg" alt="Dhalia Nishat – General Coordinator">
+          <h4>Dhalia Nishat</h4>
+          <div class="role">General Coordinator</div>
+          <div class="muted">Sorbonne Université</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="title">Gallery</h2>
+      <div class="gallery">
+        <img src="/gallery/Gal%204.jpg" alt="Gallery 4" onclick="openLightbox(this.src)">
+        <img src="/gallery/Galary%203.jpg" alt="Gallery 3" onclick="openLightbox(this.src)">
+        <img src="/gallery/Galary%202.jpg" alt="Gallery 2" onclick="openLightbox(this.src)">
+        <img src="/gallery/Galary%201.jpg" alt="Gallery 1" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" alt="Expanded image" />
   </div>
-</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="small">© <span id="y"></span> Bangladeshi Students Forum – France. All rights reserved.</div>
+      <div class="small">Made with <span title="love" style="color:var(--gold)">★</span> for the Bangladeshi student community.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function openLightbox(src){
+      const lb=document.getElementById('lightbox');
+      const img=document.getElementById('lightbox-img');
+      img.src=src; lb.style.display='flex';
+    }
+    function closeLightbox(){
+      document.getElementById('lightbox').style.display='none';
+    }
+  </script>
+</body>
+</html>
