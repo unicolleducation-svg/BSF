@@ -64,8 +64,9 @@
     .circle svg{display:block}
 
     /* Press logos */
-    .press-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-    .press-logos .logo-box{background:#fff;border:1px dashed var(--border);border-radius:12px;display:grid;place-items:center;height:70px}
+    .press-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;grid-auto-rows:70px}
+    .press-logos .logo-box{background:#fff;border:1px dashed var(--border);border-radius:12px;display:grid;place-items:center;height:70px;padding:10px}
+    .press-logos .logo-box img{max-height:40px;width:auto;object-fit:contain;filter:contrast(110%)}
 
     /* Exec committee */
     .team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -204,7 +205,7 @@
         <div class="logo-box"><img src="/somoy.png" alt="Somoy News"/></div>
         <div class="logo-box"><img src="/Ekhon.png" alt="Ekhon TV"/></div>
       </div>
-      <p class="muted"" style="margin-top:8px">Tip: upload your PNG/SVG logos into <code>/public</code> and update the file names above.</p>
+      <p class="muted"" style="margin-top:8px"></p>
     </div>
   </section>
 
@@ -246,18 +247,12 @@
     <div class="container">
       <h2 class="title">Gallery</h2>
       <p class="muted">Upload your images into <code>/public/gallery/</code> and reference them below. Click a photo to view larger.</p>
-      <div class="gallery">
-        <img src="/gallery/pic1.jpg" alt="Event photo 1" onclick="openLightbox(this.src)">
-        <img src="/gallery/pic2.jpg" alt="Event photo 2" onclick="openLightbox(this.src)">
-        <img src="/gallery/pic3.jpg" alt="Event photo 3" onclick="openLightbox(this.src)">
-        <img src="/gallery/pic4.jpg" alt="Event photo 4" onclick="openLightbox(this.src)">
-        <img src="/gallery/pic5.jpg" alt="Event photo 5" onclick="openLightbox(this.src)">
-        <img src="/gallery/pic6.jpg" alt="Event photo 6" onclick="openLightbox(this.src)">
-        <img src="/gallery/pic7.jpg" alt="Event photo 7" onclick="openLightbox(this.src)">
-        <img src="/gallery/pic8.jpg" alt="Event photo 8" onclick="openLightbox(this.src)">
-      </div>
-    </div>
-  </section>
+      $1
+        <img src="/gallery/Gal%204.jpg" alt="Gallery 4" onclick="openLightbox(this.src)">
+        <img src="/gallery/Galary%203.jpg" alt="Gallery 3" onclick="openLightbox(this.src)">
+        <img src="/gallery/Galary%202.jpg" alt="Gallery 2" onclick="openLightbox(this.src)">
+        <img src="/gallery/Galary%201.jpg" alt="Gallery 1" onclick="openLightbox(this.src)">
+      $2
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
