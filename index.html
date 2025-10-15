@@ -50,12 +50,12 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--navy),var(--navy-2));color:#fff;border-bottom:3px solid var(--gold)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0}
     .brand{display:flex;align-items:center;gap:12px;color:#fff}
-    .brand img.logo{height:58px;width:auto;border-radius:50%}
-    .brand .name{font-weight:800;letter-spacing:.3px}
-    nav.primary{display:flex;gap:18px;align-items:center}
-    nav.primary a{color:#fff;font-weight:700;opacity:.95}
+    .brand img.logo{height:44px;width:auto;border-radius:50%}
+    .brand .name{font-weight:800;letter-spacing:.2px;font-size:16px}
+    nav.primary{display:flex;gap:12px;align-items:center}
+    nav.primary a{color:#fff;font-weight:700;opacity:.95;font-size:14px}
     nav.primary a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 
     .nav-toggle{display:none;appearance:none;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:10px;padding:8px 12px;font-weight:700}
@@ -64,12 +64,12 @@
     .btn:hover{filter:brightness(1.05)}
 
     /* Hero */
-    .hero{padding:56px 0 36px;background:radial-gradient(1200px 600px at 10% -10%,rgba(212,175,55,.15),transparent 60%),radial-gradient(1400px 720px at 110% 0%,rgba(15,58,102,.1),transparent 60%)}
-    .grid-hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .hero{padding:24px 0 16px;background:radial-gradient(900px 420px at 10% -10%,rgba(212,175,55,.12),transparent 60%),radial-gradient(1000px 520px at 110% 0%,rgba(15,58,102,.08),transparent 60%)}
+    .grid-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:center}
     .eyebrow{font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
-    h1{font-size:clamp(28px,3.6vw,46px);line-height:1.1;margin:10px 0 8px;color:var(--navy)}
+    h1{font-size:clamp(22px,3vw,34px);line-height:1.15;margin:6px 0 6px;color:var(--navy)}
     .accent{color:var(--gold)}
-    .lead{color:var(--muted);font-size:18px;margin:0 0 14px}
+    .lead{color:var(--muted);font-size:16px;margin:0 0 10px}
     .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 10px 28px rgba(2,6,23,.06)}
 
     /* Sections */
@@ -120,6 +120,14 @@
     }
     @media (max-width:780px){
       .nav-toggle{display:block}
+      nav.primary{display:none;position:absolute;right:12px;top:60px;background:linear-gradient(180deg,var(--navy),var(--navy-2));border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:6px 10px;width:max-content;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+      nav.primary.open{display:block}
+      nav.primary ul{list-style:none;margin:0;padding:0}
+      nav.primary li{margin:4px 0}
+      .hero{padding:16px 0 10px}
+      .brand img.logo{height:40px}
+      .brand .name{font-size:15px}
+    }
       nav.primary{display:none;position:absolute;right:20px;top:72px;background:linear-gradient(180deg,var(--navy),var(--navy-2));border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:10px;width:max-content}
       nav.primary.open{display:block}
       nav.primary ul{list-style:none;margin:0;padding:0}
@@ -152,8 +160,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#social">Connect</a></li>
           <li><a href="#news">News</a></li>
-          <li><a href="#press">In the Media</a></li>
-          <li><a href="#committee">Executive 2025–2026</a></li>
+          <li><a href="#press">Media</a></li>
+          <li><a href="#committee">Executive</a></li>
           <li><a href="#gallery">Gallery</a></li>
         </ul>
       </nav>
