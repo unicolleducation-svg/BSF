@@ -54,7 +54,8 @@
     .brand{display:flex;align-items:center;gap:12px;color:#fff}
     .brand img.logo{height:44px;width:auto;border-radius:50%}
     .brand .name{font-weight:800;letter-spacing:.2px;font-size:16px}
-    nav.primary{display:flex;gap:12px;align-items:center}
+    nav.primary{display:flex;gap:16px;align-items:center}
+    nav.primary ul{display:flex;list-style:none;margin:0;padding:0;gap:16px}
     nav.primary a{color:#fff;font-weight:700;opacity:.95;font-size:14px}
     nav.primary a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 
@@ -93,7 +94,7 @@
     .press-logos .logo-box img{max-height:40px;width:auto;object-fit:contain;filter:contrast(110%)}
 
     /* Exec committee */
-    .team{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .team{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
     .person{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
     .avatar{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);margin:6px auto 10px;display:block}
     .person h4{margin:6px 0 2px}
@@ -101,7 +102,12 @@
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .gallery img{border-radius:12px;border:1px solid var(--border);cursor:pointer}
+    .gallery img{
+      border-radius:12px;border:1px solid var(--border);cursor:pointer;
+      /* ensure consistent, smaller thumbs that always show */
+      width:100%; aspect-ratio:4/3; object-fit:cover;
+      max-height:220px; /* cap height for heavy originals */
+    }
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:70}
     .lightbox img{max-width:92%;max-height:92%;border-radius:10px}
 
@@ -115,32 +121,27 @@
       .grid-hero{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr 1fr}
       .press-logos{grid-template-columns:repeat(4,1fr)}
-      .team{grid-template-columns:repeat(2,1fr)}
+      .team{grid-template-columns:repeat(3,1fr)}
       .gallery{grid-template-columns:repeat(3,1fr)}
     }
     @media (max-width:780px){
       .nav-toggle{display:block}
       nav.primary{display:none;position:absolute;right:12px;top:60px;background:linear-gradient(180deg,var(--navy),var(--navy-2));border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:6px 10px;width:max-content;box-shadow:0 10px 24px rgba(0,0,0,.25)}
       nav.primary.open{display:block}
-      nav.primary ul{list-style:none;margin:0;padding:0}
-      nav.primary li{margin:4px 0}
+      nav.primary ul{list-style:none;margin:0;padding:0;display:block}
+      nav.primary li{margin:6px 0}
       .hero{padding:16px 0 10px}
       .brand img.logo{height:40px}
       .brand .name{font-size:15px}
-    }
-      nav.primary{display:none;position:absolute;right:20px;top:72px;background:linear-gradient(180deg,var(--navy),var(--navy-2));border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:10px;width:max-content}
-      nav.primary.open{display:block}
-      nav.primary ul{list-style:none;margin:0;padding:0}
-      nav.primary li{margin:6px 0}
     }
     @media (max-width:640px){
       .brand img.logo{height:48px}
       .cards{grid-template-columns:1fr}
       .press-logos{grid-template-columns:repeat(3,1fr)}
-      .team{grid-template-columns:1fr}
+      .team{grid-template-columns:1fr 1fr}
       .gallery{grid-template-columns:1fr 1fr}
     }
-      /* Mini socials in team cards */
+    /* Mini socials in team cards */
     .social-mini{justify-content:center;margin-top:8px}
     .social-mini .circle{width:32px;height:32px}
   </style>
@@ -163,6 +164,8 @@
           <li><a href="#press">Media</a></li>
           <li><a href="#committee">Executive</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#notices">Notices</a></li>
+          <li><a href="#events">Events</a></li>
         </ul>
       </nav>
     </div>
@@ -204,6 +207,15 @@
                 <span class="circle" style="background:#ff0000;border:none" aria-hidden="true">
                   <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill="#fff" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.7 2.4 12 2.4 12 2.4h0s-4.7 0-8.2.4c-.5.1-1.5.1-2.4 1c-.7.7-.9 2.4-.9 2.4S0 8.2 0 10.2v1.6c0 2 .2 4 .2 4s.2 1.7.9 2.4c.9.9 2.1.9 2.7 1c2 .2 8.2.4 8.2.4s4.7 0 8.2-.4c.5-.1 1.5-.1 2.4-1c.7-.7.9-2.4.9-2.4s.2-2 .2-4V10.2c0-2-.2-4-.2-4ZM9.6 13.7V7.9l6.3 2.9-6.3 2.9Z"/>
+                  </svg>
+                </span>
+              </a>
+              <!-- Google (added) -->
+              <a href="https://www.google.com/search?q=Bangladeshi+Students+Forum%2C+France%2C+32+Rue+Pradier%2C+Paris%2C+France&oq=Bang&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg9MgYIARBFGDsyBggCEEUYOzIGCAMQRRg7MgwIBBAuGEMYgAQYigUyDAgFEC4YQxiABBiKBTIMCAYQABhDGIAEGIoFMgYIBxBFGD3SAQgxNjg0ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener noreferrer" aria-label="Google">
+                <span class="circle" aria-hidden="true" title="Google Search">
+                  <!-- Simplified Google 'G' -->
+                  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#4285F4" d="M21.35 11.1h-9.66v2.98h5.53c-.24 1.5-1.67 4.4-5.53 4.4-3.33 0-6.05-2.75-6.05-6.14s2.72-6.14 6.05-6.14c1.9 0 3.17.8 3.9 1.49l2.65-2.57C16.91 3.31 15 2.5 12.69 2.5 7.73 2.5 3.7 6.62 3.7 12s4.03 9.5 8.99 9.5c5.19 0 8.6-3.64 8.6-8.77 0-.59-.06-1.04-.15-1.63Z"/>
                   </svg>
                 </span>
               </a>
@@ -314,6 +326,20 @@
               <a href="https://www.linkedin.com/in/dhalianishat/" target="_blank" rel="noopener" aria-label="Dhalia Nishat on LinkedIn"><span class="circle li" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M19 3A2.94 2.94 0 0 1 22 6v12a2.94 2.94 0 0 1-3 3H5a2.94 2.94 0 0 1-3-3V6a2.94 2.94 0 0 1 3-3h14M8.34 18.34V9.75H5.67v8.59h2.67M7 8.5a1.55 1.55 0 1 0 0-3.1a1.55 1.55 0 0 0 0 3.1m12 9.84v-4.63c0-2.48-1.33-3.63-3.12-3.63a2.7 2.7 0 0 0-2.44 1.34h-.05V9.75h-2.67v8.59h2.67v-4.77c0-1.26.23-2.47 1.79-2.47s1.61 1.39 1.61 2.55v4.69H19Z"/></svg></span></a>
             </div>
           </div>
+          <!-- Added member: Chowdhury Al Farabi -->
+          <div class="person">
+            <img class="avatar" src="/Farabi.png" alt="Portrait of Chowdhury Al Farabi, Executive Member" width="90" height="90" loading="lazy" decoding="async">
+            <h4>Chowdhury Al Farabi</h4>
+            <div class="role">Executive Member</div>
+            <div class="muted">Université Paris-Saclay</div>
+            <div class="social social-mini">
+              <a href="https://www.facebook.com/chowdhury.farabi/" target="_blank" rel="noopener" aria-label="Chowdhury Al Farabi on Facebook">
+                <span class="circle fb" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 5.01 3.66 9.17 8.44 9.96v-7.04H7.9V12.1h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88c1.09 0 2.23.2 2.23.2v2.46h-1.25c-1.23 0-1.61.76-1.61 1.54v1.88h2.74l-.44 2.89h-2.3v7.04C18.34 21.24 22 17.08 22 12.07Z"/></svg>
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -330,11 +356,20 @@
         </div>
       </div>
     </section>
-      <!-- Notices -->
+
+    <!-- Notices -->
     <section id="notices" aria-labelledby="notices-title">
       <div class="container">
         <h2 class="title" id="notices-title">Official Notices</h2>
         <div class="cards" role="list">
+          <!-- New official press release (added) -->
+          <article class="card" role="listitem">
+            <h3>Bangladeshi Students Forum, France (BSF) New Executive Committee 2025–2026 Announcement — Press Release</h3>
+            <p class="muted">Posted 15 Sep 2025</p>
+            <p>If you have any queries, email <a href="mailto:bdstudentsforumfr@gmail.com">bdstudentsforumfr@gmail.com</a>.</p>
+            <p><a class="btn" href="./BSF%20Press%20Release%20v.15.09.2025.docx.pdf" target="_blank" rel="noopener">Download (PDF)</a></p>
+          </article>
+
           <article class="card" role="listitem">
             <h3>Example: Welcome & Orientation Notice</h3>
             <p class="muted">Posted 1 Oct 2025</p>
@@ -351,10 +386,10 @@
         <h2 class="title" id="events-title">Events</h2>
         <div class="cards" role="list">
           <article class="card" role="listitem">
-            <h3>Example: BSF Community Meetup — Paris</h3>
+            <h3>BSF Community Meetup — Paris</h3>
             <p class="muted">Date: 20 Oct 2025 • Location: Place de la République</p>
-            <p>Join fellow Bangladeshi students in Paris. This is an example card; future events will be listed here and on our Facebook page.</p>
-            <p><a class="btn" href="https://www.facebook.com/bdstudentsforumfr/events" target="_blank" rel="noopener">View on Facebook</a></p>
+            <p>Join fellow Bangladeshi students in Paris. Future events will be listed here and on our Facebook page.</p>
+            <p><a class="btn" href="https://www.facebook.com/events/790401527096958/" target="_blank" rel="noopener">View on Facebook</a></p>
           </article>
         </div>
       </div>
